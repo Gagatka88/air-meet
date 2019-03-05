@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Update profile</title>
+</head>
+<body>
+
+<form action="" th:action="@{/loggedin/processupdateform}" th:object="${user}" method="POST" enctype="utf8"
+      role="form">
+
+    <input type="hidden" th:field="*{username}" />
+
+    <input type="text" th:field="*{email}" placeholder="Email">
+
+    <input type="text" th:field="*{fieldOfExpertise}" placeholder="Field of Expertise">
+
+    <input type="text" th:field="*{airportCode}" placeholder="Airport code">
+
+    <input type="text" th:field="*{date}" placeholder="Date">
+
+    <input type="text" th:field="*{timeFrom}" placeholder="Time from">
+
+    <input type="text" th:field="*{timeUntil}" placeholder="Time until">
+
+    <button type="submit" >Save</button>
+
+</form>
+
+
+</body>
+</html>

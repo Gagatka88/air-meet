@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Air Meet Profile</title>
+</head>
+<body>
+
+<h2>Your profile</h2>
+<br>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Field of Expertise</th>
+        <th>Airport</th>
+        <th>Date</th>
+        <th>Time From</th>
+        <th>Time Until</th>
+        <th>Meeting</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:object="${session.user}">
+        <td th:text="${user.username}" />
+        <td th:text="${user.fieldOfExpertise}" />
+        <td th:text="${user.airportCode}" />
+        <td th:text="${user.date}" />
+        <td th:text="${user.timeFrom}" />
+        <td th:text="${user.timeUntil}" />
+        <td>
+            View Your Meetings
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/loggedin}" method="get">
+    <p><input type="submit" value="return to main page"/> </p>
+</form>
+
+<br>
+
+<form action="#" th:action="@{/loggedin/showupdatepage}" method="get">
+    <p><input type="submit" value="update profile"/> </p>
+</form>
+
+<br>
+Delete your profile
+<form action="#" th:action="@{/loggedin/delete}">
+      <p> <input type="submit" value="delete"
+                 onclick="if (!(confirm('Are you sure you want to delete your profile?'))) return false"></p>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact details</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:object="${user}">
+        <td th:text="${user.username}" />
+        <td th:text="${user.email}" />
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+Go back to userlist
+
+<form action="#" th:action="@{/loggedin/list}" method="get">
+    <p><input type="submit" value="Show users"/> </p>
+</form>
+
+
+
+</body>
+</html>

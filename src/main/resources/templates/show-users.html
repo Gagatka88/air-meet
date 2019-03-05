@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Available Users</title>
+</head>
+<body>
+
+<h3> Users registered at AirMeet </h3>
+
+<br>
+
+    <table>
+        <thead>
+             <tr>
+                <th>Username</th>
+                <th>Field of Expertise</th>
+                <th>Airport</th>
+                <th>Date</th>
+                <th>Time From</th>
+                <th>Time Until</th>
+                <th>Meeting</th>
+             </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="tempUser : ${users}">
+                <td th:text="${tempUser.username}" />
+                <td th:text="${tempUser.fieldOfExpertise}" />
+                <td th:text="${tempUser.airportCode}" />
+                <td th:text="${tempUser.date}" />
+                <td th:text="${tempUser.timeFrom}" />
+                <td th:text="${tempUser.timeUntil}" />
+                <td>
+                    <form method="get" action="/showcontact" th:object="${tempUser}"/>
+                    <button type="submit">Show contact</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<form action="#" th:action="@{/loggedin}" method="get">
+    <p><input type="submit" value="return to main page"/> </p>
+</form>
+
+
+</body>
+</html>

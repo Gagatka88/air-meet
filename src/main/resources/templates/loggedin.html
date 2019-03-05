@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>You are logged in</title>
+</head>
+<body>
+<h2>You are logged in</h2>
+
+Your profile
+<form action="#" th:action="@{/loggedin/userprofile}" method="get">
+    <p><input type="submit" value="Go to your profile"/> </p>
+</form>
+
+Show registered users who are willing to meet you at the airport
+<form action="#" th:action="@{/loggedin/list}" method="get">
+    <p><input type="submit" value="Show users"/> </p>
+</form>
+
+
+<h3>Here you can logout</h3>
+<form action="#" th:action="@{/logout}" method="post">
+    <p><input type="submit" value="Log out"/> </p>
+</form>
+
+</body>
+</html>

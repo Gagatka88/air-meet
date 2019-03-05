@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Update confirmation</title>
+</head>
+<body>
+
+Your profile was updated
+<br>
+
+
+Go to your profile
+<form action="#" th:action="@{/loggedin/userprofile}" method="get">
+    <p><input type="submit" value="Go to your profile"/> </p>
+</form>
+
+</body>
+</html>
