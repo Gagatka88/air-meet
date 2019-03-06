@@ -33,10 +33,12 @@
                 <td th:text="${tempUser.timeFrom}" />
                 <td th:text="${tempUser.timeUntil}" />
                 <td>
-                    <form method="get" action="/showcontact" th:object="${tempUser}"/>
-                    <button type="submit">Show contact</button>
-                    </form>
+                    <a th:href="@{/loggedin/showcontact(tempUserUsername=${tempUser.username})}">
+                        Show contact
+                    </a>
+
                 </td>
+
             </tr>
         </tbody>
     </table>

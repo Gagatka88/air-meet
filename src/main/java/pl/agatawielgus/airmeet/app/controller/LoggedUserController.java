@@ -38,11 +38,9 @@ public class LoggedUserController {
     }
 
     @GetMapping("/showcontact")
-    public String showContactDetails(@RequestParam("tempUser") User user, Model model){
+    public String showContactDetails(@RequestParam("tempUserUsername") String userName, Model model){
 
-/*        System.out.println("Got uset " + username);
-
-        User user = userService.findByUsername(username);*/
+        User user = userService.findByUsername(userName);
 
         model.addAttribute("user", user);
 
